@@ -16,7 +16,64 @@
   font-weight: 600;
 }
 
-.hello {
+body {
   font-family: 'SF Pro Display';
-  color: red;
+  color: #ffffff;
+}
+
+.banner {
+  width: 390px;
+  height: 844px;
+  margin: 0 auto;
+  overflow: hidden;
+  color: #ffffff;
+  background-color: #000; /* Фон для контраста */
+  background-image: url(./assets/images/bg/bg.png);
+  background-repeat: no-repeat;
+}
+
+.header {
+  margin-top: 241px;
+}
+.header__title {
+  padding: 0 59px;
+  font-size: 42px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.main {
+  padding: 0 24px;
+}
+
+.feature-cards {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: 40.4px;
+}
+
+.card {
+  position: relative;
+  width: 104.4px;
+  height: 138.6px;
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__text {
+  width: 70px;
+  position: absolute;
+  bottom: 10.8px;
+  left: 7.2px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: normal;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
 }
