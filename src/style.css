@@ -16,9 +16,39 @@
   font-weight: 600;
 }
 
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+footer,
+header,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+a {
+  text-decoration: none;
+}
+
 body {
   font-family: 'SF Pro Display';
+  font-size: 16px;
   color: #ffffff;
+  overflow-y: hidden;
 }
 
 .banner {
@@ -27,16 +57,18 @@ body {
   margin: 0 auto;
   overflow: hidden;
   color: #ffffff;
-  background-color: #000; /* Фон для контраста */
   background-image: url(./assets/images/bg/bg.png);
   background-repeat: no-repeat;
 }
 
 .header {
   margin-top: 241px;
+  width: 100%;
 }
+
 .header__title {
   padding: 0 59px;
+  margin-bottom: 40px;
   font-size: 42px;
   font-weight: bold;
   text-align: center;
@@ -76,4 +108,81 @@ body {
   font-weight: normal;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   margin: 0;
+}
+
+.plans {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 24px;
+  background-color: rgba(255, 255, 255, 0.1068);
+  border-radius: 32px;
+}
+
+.selector__selected {
+  background-color: rgba(255, 255, 255, 0.3024);
+  border: 1px solid white;
+}
+
+.selector__title {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.selector__text {
+  font-weight: normal;
+  opacity: 0.7;
+}
+
+.selector__price {
+  margin-right: 60px;
+}
+
+.offer {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  padding: 2px 23px;
+  background: white;
+  color: #141131;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.button__wrapper {
+  background: #ffffff;
+  padding: 16px 24px;
+  border-radius: 32px;
+  text-align: center;
+}
+
+.button {
+  color: #070b33;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer__link {
+  font-size: 12.5px;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.58px;
 }
