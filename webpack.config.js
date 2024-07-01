@@ -28,7 +28,7 @@ export default {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/images/[hash][ext][query]',
+          filename: 'assets/images/[name][ext][query]',
         },
       },
       {
@@ -56,16 +56,15 @@ export default {
       template: './src/index.html',
     }),
     new CopyWebpackPlugin({
-      patterns: [{ from: 'src/assets/locales', to: 'assets/locales' }],
+      patterns: [
+        { from: 'src/assets/locales', to: 'assets/locales' },
+        { from: 'src/assets/images/f1', to: 'assets/images' },
+        { from: 'src/assets/images/f2', to: 'assets/images' },
+        { from: 'src/assets/images/f3', to: 'assets/images' },
+        { from: 'src/assets/images/cross', to: 'assets/images' },
+      ],
     }),
   ],
-  // devServer: {
-  //   static: {
-  //     directory: path.join(__dirname, 'dist'),
-  //   },
-  //   compress: true,
-  //   port: 9000,
-  // },
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),
@@ -83,7 +82,13 @@ export default {
 
       devServer.app.use((req, res, next) => {
         const url = new URL(req.url, `http://${req.headers.host}`);
-        if (!url.searchParams.get('lang')) {
+        const isAssetRequest =
+          url.pathname.startsWith('/assets/') ||
+          url.pathname.startsWith('/locales/') ||
+          url.pathname.endsWith('.js') ||
+          url.pathname.endsWith('.ico');
+
+        if (!isAssetRequest && !url.searchParams.get('lang')) {
           const redirectUrl = new URL(req.url, `http://${req.headers.host}`);
           redirectUrl.searchParams.set('lang', 'en');
           res.writeHead(302, { Location: redirectUrl.toString() });

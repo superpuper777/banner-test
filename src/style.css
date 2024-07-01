@@ -59,10 +59,27 @@ body {
   color: #ffffff;
   background-image: url(./assets/images/bg/bg.png);
   background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi) {
+  .banner {
+    background-image: url('./assets/images/bg/bg@2x.png');
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3),
+  only screen and (min-resolution: 288dpi) {
+  .banner {
+    background-image: url('./assets/images/bg/bg@3x.png');
+  }
 }
 
 .header {
-  margin-top: 241px;
+  display: flex;
+  flex-direction: column;
+  gap: 157px;
   width: 100%;
 }
 
@@ -72,6 +89,12 @@ body {
   font-size: 42px;
   font-weight: bold;
   text-align: center;
+}
+
+.cross__icon {
+  margin-top: 70px;
+  padding-left: 24px;
+  width: 12px;
 }
 
 .main {
