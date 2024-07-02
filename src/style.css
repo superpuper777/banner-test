@@ -40,6 +40,12 @@ section {
   vertical-align: baseline;
 }
 
+*/ *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 a {
   text-decoration: none;
 }
@@ -48,18 +54,19 @@ body {
   font-family: 'SF Pro Display';
   font-size: 16px;
   color: #ffffff;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
+  overflow: hidden;
 }
 
 .banner {
-  width: 390px;
-  height: 844px;
+  width: 100%;
+  height: 100vh;
   margin: 0 auto;
-  overflow: hidden;
   color: #ffffff;
-  background-image: url(./assets/images/bg/bg.png);
-  background-repeat: no-repeat;
+  background-color: rgb(0, 0, 0);
+  background-image: no-repeat center url(./assets/images/bg/bg.png);
   background-size: cover;
+  overflow: hidden;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -79,13 +86,13 @@ body {
 .header {
   display: flex;
   flex-direction: column;
-  gap: 157px;
+  gap: 159px;
   width: 100%;
 }
 
 .header__title {
   padding: 0 59px;
-  margin-bottom: 40px;
+  margin-bottom: 41px;
   font-size: 42px;
   font-weight: bold;
   text-align: center;
@@ -95,6 +102,7 @@ body {
   margin-top: 70px;
   padding-left: 24px;
   width: 12px;
+  height: auto;
 }
 
 .main {
@@ -106,7 +114,7 @@ body {
   align-items: center;
   gap: 14px;
   justify-content: center;
-  margin-bottom: 40.4px;
+  margin-bottom: 50px;
 }
 
 .card {
@@ -117,7 +125,7 @@ body {
 
 .card__image {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
 }
 
@@ -138,7 +146,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 28px;
+  margin-bottom: 44px;
 }
 
 .selector {
@@ -201,6 +209,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 30px;
+  padding-bottom: 34px;
 }
 
 .footer__link {
@@ -208,4 +217,144 @@ body {
   font-weight: normal;
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.58px;
+}
+
+/* iPhone 11 Pro  */
+@media (max-width: 375px) {
+  .header {
+    gap: calc(150px * 0.96);
+  }
+  .header__title {
+    padding: 0 calc(59px * 0.96);
+    margin-bottom: calc(41px * 0.96);
+    font-size: calc(42px * 0.96);
+  }
+  .cross__icon {
+    margin-top: calc(70px * 0.96);
+  }
+  .feature-cards {
+    gap: calc(14px * 0.96);
+    margin-bottom: calc(50px * 0.96);
+  }
+  .card {
+    width: calc(104.4px * 0.96);
+    height: calc(138.6px * 0.96);
+  }
+
+  .card__text {
+    width: calc(70px * 0.96);
+    font-size: calc(11px * 0.96);
+  }
+
+  .plans {
+    gap: calc(8px * 0.96);
+    margin-bottom: calc(44px * 0.96);
+  }
+
+  .selector {
+    padding: calc(8px 24px * 0.96);
+  }
+
+  .selector__title {
+    font-size: calc(16px * 0.96);
+  }
+
+  .selector__price {
+    margin-right: calc(60px * 0.96);
+  }
+
+  .offer {
+    padding: calc(2px * 0.96) calc(23px * 0.96);
+    font-size: calc(13px * 0.96);
+  }
+
+  .button__wrapper {
+    padding: calc(16px * 0.96) calc(24px * 0.96);
+  }
+
+  .button {
+    font-size: calc(20px * 0.96);
+  }
+
+  .footer {
+    gap: calc(30px * 0.96);
+    padding-bottom: calc(34px * 0.96);
+  }
+
+  .footer__link {
+    font-size: calc(12.5px * 0.96);
+    letter-spacing: calc(0.58px * 0.96);
+  }
+}
+
+/* iPhone 14 Plus и Pro Max */
+@media only screen and (min-width: 428px) {
+  .header {
+    gap: calc(159px * 1.1);
+  }
+
+  .header__title {
+    padding: 0 calc(59px * 1.1);
+    margin-bottom: calc(41px * 1.1);
+    font-size: calc(42px * 1.1);
+  }
+
+  .cross__icon {
+    margin-top: calc(70px * 1.1);
+  }
+
+  .feature-cards {
+    gap: calc(14px * 1.1);
+    margin-bottom: calc(50px * 1.1);
+  }
+
+  .card {
+    width: calc(104.4px * 1.1);
+    height: calc(138.6px * 1.1);
+  }
+
+  .card__text {
+    width: calc(70px * 1.1);
+    font-size: calc(11px * 1.1);
+  }
+
+  .plans {
+    gap: calc(8px * 1.1);
+    margin-bottom: calc(44px * 1.1);
+  }
+
+  .selector {
+    padding: calc(8px * 1.1) calc(24px * 1.1);
+  }
+
+  .selector__title {
+    font-size: calc(16px * 1.1);
+  }
+
+  .selector__price {
+    margin-right: calc(60px * 1.1);
+  }
+
+  .offer {
+    padding: calc(2px * 1.1) calc(23px * 1.1);
+    font-size: calc(13px * 1.1);
+  }
+
+  .button__wrapper {
+    padding: calc(16px * 1.1) calc(24px * 1.1);
+  }
+
+  .button {
+    font-size: calc(20px * 1.1);
+  }
+
+  .footer {
+    gap: calc(30px * 1.1);
+    padding-bottom: calc(34px * 1.1);
+  }
+
+  .footer__link {
+    font-size: calc(12.5px * 1.1);
+    letter-spacing: calc(0.58px * 1.1);
+  }
 }

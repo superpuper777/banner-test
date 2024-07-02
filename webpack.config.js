@@ -43,7 +43,6 @@ export default {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-
         type: 'asset/resource',
         generator: {
           filename: 'assets/fonts/[hash][ext][query]',
@@ -54,6 +53,9 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      inject: 'body',
+      scriptLoading: 'defer',
+      preload: true,
     }),
     new CopyWebpackPlugin({
       patterns: [
