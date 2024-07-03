@@ -94,6 +94,7 @@ body {
   font-size: 42px;
   font-weight: bold;
   text-align: center;
+  align-self: center;
 }
 
 .cross__icon {
@@ -207,8 +208,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 30px;
-  padding-bottom: 34px;
-  /* margin-bottom: 34px; */
+  padding: 0 24px 34px 24px;
 }
 
 .footer__link {
@@ -227,6 +227,7 @@ body {
     padding: 0 52px;
     margin-bottom: 40px;
   }
+
   .banner {
     background-image: no-repeat center url(./assets/images/bg/bgFor8.png);
     background-position: 50% 25%;
@@ -249,7 +250,6 @@ body {
   }
   .footer {
     gap: 30px;
-    /* margin-bottom: 11px; */
     padding-bottom: 11px;
   }
 }

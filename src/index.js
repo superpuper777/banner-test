@@ -29,7 +29,44 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-const languages = ['en', 'fr', 'es', 'de', 'it', 'ru'];
+const changeFontSize = (languageCode) => {
+  const settings = {
+    fr: { marginRight: '20px', fontSize: '32px' },
+    de: {
+      marginRight: '20px',
+      fontSize: '27px',
+      selectorTitle: '12px',
+      footerLinkFont: '10px',
+    },
+    es: { marginRight: '40px', fontSize: '38px' },
+    pt: { marginRight: '40px', fontSize: '32px' },
+    ja: { fontSize: '34px', footerLinkFont: '11px' },
+    default: { fontSize: '42px', selectorTitle: '16px' },
+  };
+
+  const {
+    marginRight = '',
+    fontSize,
+    selectorTitle = '',
+    footerLinkFont = '',
+  } = settings[languageCode] || settings.default;
+
+  document.querySelector('.header__title').style.fontSize = fontSize;
+
+  document.querySelectorAll('.selector__price').forEach((element) => {
+    element.style.marginRight = marginRight;
+  });
+
+  document.querySelectorAll('.selector__title').forEach((element) => {
+    element.style.fontSize = selectorTitle;
+  });
+
+  document.querySelectorAll('.footer__link').forEach((element) => {
+    element.style.fontSize = footerLinkFont;
+  });
+};
+
+const languages = ['en', 'fr', 'es', 'de', 'pt', 'ja'];
 
 const getLanguage = () => {
   const urlParams = new URLSearchParams(window.location.search);
@@ -45,6 +82,11 @@ const getLanguage = () => {
   }
 
   return 'en';
+};
+
+const changeLanguage = (lang) => {
+  document.documentElement.lang = lang;
+  changeFontSize(lang);
 };
 
 const loadLanguage = async (lang) => {
@@ -111,3 +153,4 @@ const useTranslations = (strings) => {
 
 const language = getLanguage();
 loadLanguage(language);
+changeLanguage(language);
