@@ -54,8 +54,6 @@ body {
   font-family: 'SF Pro Display';
   font-size: 16px;
   color: #ffffff;
-  /* overflow-y: hidden; */
-  overflow: hidden;
 }
 
 .banner {
@@ -86,7 +84,7 @@ body {
 .header {
   display: flex;
   flex-direction: column;
-  gap: 159px;
+  gap: 157px;
   width: 100%;
 }
 
@@ -99,7 +97,7 @@ body {
 }
 
 .cross__icon {
-  margin-top: 70px;
+  margin-top: 72px;
   padding-left: 24px;
   width: 12px;
   height: auto;
@@ -175,7 +173,7 @@ body {
 }
 
 .selector__price {
-  margin-right: 60px;
+  margin-right: 65px;
 }
 
 .offer {
@@ -210,6 +208,7 @@ body {
   align-items: center;
   gap: 30px;
   padding-bottom: 34px;
+  /* margin-bottom: 34px; */
 }
 
 .footer__link {
@@ -218,11 +217,129 @@ body {
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.58px;
 }
+/* iPhone SE (2020) */
+@media only screen and (min-width: 375px) and (max-width: 667px) {
+  .header {
+    gap: 69px;
+  }
+  .header__title {
+    width: 272px;
+    padding: 0 52px;
+    margin-bottom: 40px;
+  }
+  .banner {
+    background-image: no-repeat center url(./assets/images/bg/bgFor8.png);
+    background-position: 50% 25%;
+  }
+  .cross__icon {
+    margin-top: 35px;
+  }
+  .feature-cards {
+    gap: 7px;
+    margin-bottom: 40px;
+  }
+  .card__text {
+    width: 90px;
+  }
+  .plans {
+    margin-bottom: 28px;
+  }
+  .selector__price {
+    margin-right: 37px;
+  }
+  .footer {
+    gap: 30px;
+    /* margin-bottom: 11px; */
+    padding-bottom: 11px;
+  }
+}
+
+/* iPhone 14 */
+@media only screen and (min-width: 390px) and (max-height: 844px) {
+  .header {
+    gap: 159px;
+  }
+
+  .header__title {
+    padding: 0 59px;
+    margin-bottom: 41px;
+    font-size: 42px;
+  }
+
+  .cross__icon {
+    margin-top: 72px;
+  }
+
+  .feature-cards {
+    gap: 14px;
+    margin-bottom: 50px;
+  }
+
+  .card {
+    width: 104.4px;
+    height: 138.6px;
+  }
+
+  .card__text {
+    width: 70px;
+    font-size: 11px;
+  }
+
+  .plans {
+    gap: 8px;
+    margin-bottom: 44px;
+  }
+
+  .selector {
+    padding: 8px 24px;
+  }
+
+  .selector__title {
+    font-size: 16px;
+  }
+
+  .selector__price {
+    margin-right: 60px;
+  }
+}
+
+/* iPhone 8 Plus */
+@media only screen and (min-width: 414px) and (max-width: 736px) {
+  .header {
+    gap: calc(69px * 1.1);
+  }
+  .header__title {
+    width: 272px;
+    padding: 0 calc(52px * 1.1);
+    margin-bottom: calc(40px * 1.1);
+  }
+  .banner {
+    background-image: no-repeat center url(./assets/images/bg/bgFor8.png);
+    background-position: 50% 25%;
+  }
+  .feature-cards {
+    gap: calc(7px * 1.1);
+    margin-bottom: calc(40px * 1.1);
+  }
+  .card__text {
+    width: calc(90px * 1.1);
+  }
+  .plans {
+    margin-bottom: calc(28px * 1.1);
+  }
+  .selector__price {
+    margin-right: calc(37px * 1.1);
+  }
+  .footer {
+    gap: calc(30px * 1.1);
+    padding-bottom: calc(11px * 1.1);
+  }
+}
 
 /* iPhone 11 Pro  */
-@media (max-width: 375px) {
+@media only screen and (max-width: 375px) and (min-height: 812px) {
   .header {
-    gap: calc(150px * 0.96);
+    gap: calc(157px * 0.96);
   }
   .header__title {
     padding: 0 calc(59px * 0.96);
@@ -230,7 +347,7 @@ body {
     font-size: calc(42px * 0.96);
   }
   .cross__icon {
-    margin-top: calc(70px * 0.96);
+    margin-top: calc(72px * 0.96);
   }
   .feature-cards {
     gap: calc(14px * 0.96);
@@ -260,7 +377,7 @@ body {
   }
 
   .selector__price {
-    margin-right: calc(60px * 0.96);
+    margin-right: calc(65px * 0.96);
   }
 
   .offer {
@@ -288,19 +405,20 @@ body {
 }
 
 /* iPhone 14 Plus и Pro Max */
-@media only screen and (min-width: 428px) {
+@media only screen and (min-width: 428px) and (max-height: 932px) {
   .header {
-    gap: calc(159px * 1.1);
+    gap: calc(157px * 1.1);
   }
 
   .header__title {
+    width: calc(272px * 1.1);
     padding: 0 calc(59px * 1.1);
     margin-bottom: calc(41px * 1.1);
     font-size: calc(42px * 1.1);
   }
 
   .cross__icon {
-    margin-top: calc(70px * 1.1);
+    margin-top: calc(72px * 1.1);
   }
 
   .feature-cards {
@@ -332,7 +450,7 @@ body {
   }
 
   .selector__price {
-    margin-right: calc(60px * 1.1);
+    margin-right: calc(65px * 1.1);
   }
 
   .offer {
