@@ -1,0 +1,27 @@
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi) {
+  .banner {
+    background-image: url('../assets/images/bg/bg@2x.png');
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3),
+  only screen and (min-resolution: 288dpi) {
+  .banner {
+    background-image: url('../assets/images/bg/bg@3x.png');
+  }
+}
+
+/* @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi) {
+  .banner {
+    background-image: url('./assets/images/bg/bg@2x.png');
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3),
+  only screen and (min-resolution: 288dpi) {
+  .banner {
+    background-image: url('./assets/images/bg/bg@3x.png');
+  }
+} */

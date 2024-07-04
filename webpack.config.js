@@ -74,33 +74,5 @@ export default {
     compress: true,
     port: 9000,
     open: true,
-    devMiddleware: {
-      writeToDisk: true,
-    },
-    setupMiddlewares: (middlewares, devServer) => {
-      if (!devServer) {
-        throw new Error('webpack-dev-server is not defined');
-      }
-
-      devServer.app.use((req, res, next) => {
-        const url = new URL(req.url, `http://${req.headers.host}`);
-        const isAssetRequest =
-          url.pathname.startsWith('/assets/') ||
-          url.pathname.startsWith('/locales/') ||
-          url.pathname.endsWith('.js') ||
-          url.pathname.endsWith('.ico');
-
-        if (!isAssetRequest && !url.searchParams.get('lang')) {
-          const redirectUrl = new URL(req.url, `http://${req.headers.host}`);
-          redirectUrl.searchParams.set('lang', 'en');
-          res.writeHead(302, { Location: redirectUrl.toString() });
-          res.end();
-        } else {
-          next();
-        }
-      });
-
-      return middlewares;
-    },
   },
 };
