@@ -1,13 +1,17 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const isProduction = process.env.NODE_ENV === 'production';
 
 export default {
-  mode: 'development',
+  mode: isProduction ? 'production' : 'development',
   entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
     filename: '[name].[contenthash].js',
@@ -66,7 +70,14 @@ export default {
         { from: 'src/assets/images/cross', to: 'assets/images' },
       ],
     }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+    }),
   ],
+  optimization: {
+    minimize: isProduction,
+    minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
+  },
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),
