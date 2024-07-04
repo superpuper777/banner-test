@@ -3,10 +3,11 @@ import { setImagesIcons } from './modules/setImagesIcons.js';
 import { selectPlan } from './modules/selectPlan.js';
 import { changeFontSize } from './modules/changeFontSize.js';
 import { getLanguage, changeLanguage } from './modules/languageUtils.js';
-import { interpolateTemplate } from './modules/utils.js';
+import { interpolateTemplate, changeBannerBg } from './modules/utils.js';
 import { useTranslations } from './modules/useTranslations.js';
 
 document.addEventListener('DOMContentLoaded', function () {
+  changeBannerBg();
   setImagesIcons();
   selectPlan();
 });

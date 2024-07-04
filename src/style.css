@@ -19,11 +19,25 @@ body {
   margin: 0 auto;
   color: #ffffff;
   background-color: rgb(0, 0, 0);
-  background-image: url(./assets/images/bg/bg.png);
+  /* background-image: url(./assets/images/bg/bg.png); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   overflow: hidden;
+}
+
+.banner[data-model='default'] {
+  background-image: url(./assets/images/bg/bg.png);
+}
+
+.banner[data-model='se'] {
+  background-image: url(./assets/images/bg/bgFor8.png);
+  background-position: 50% 25%;
+}
+
+.banner[data-model='iphone8Plus'] {
+  background-image: url(./assets/images/bg/bgFor8.png);
+  background-position: 50% 25%;
 }
 
 .header {
@@ -177,6 +191,7 @@ body {
   .banner {
     background-position: 50% 25%;
   }
+
   .cross__icon {
     margin-top: 35px;
   }
@@ -259,9 +274,7 @@ body {
     padding: 0 calc(52px * var(--magnification-factor));
     margin-bottom: calc(40px * var(--magnification-factor));
   }
-  .banner {
-    background-position: 50% 25%;
-  }
+
   .feature-cards {
     gap: calc(7px * var(--magnification-factor));
     margin-bottom: calc(40px * var(--magnification-factor));
