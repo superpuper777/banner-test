@@ -22,7 +22,7 @@ section {
   vertical-align: baseline;
 }
 
-*/ *,
+*,
 *::before,
 *::after {
   box-sizing: border-box;

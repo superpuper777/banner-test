@@ -1,10 +1,15 @@
 export const changeFontSize = (languageCode) => {
   const settings = {
-    fr: { marginRight: '20px', fontSize: '32px' },
+    fr: {
+      marginRight: '20px',
+      fontSize: '35px',
+      footerLinkFont: '11px',
+      footerGap: '10px',
+    },
     de: {
       marginRight: '20px',
       fontSize: '27px',
-      selectorTitle: '12px',
+      selectorTitle: '14.5px',
       footerLinkFont: '10px',
     },
     es: { marginRight: '40px', fontSize: '38px' },
@@ -18,6 +23,7 @@ export const changeFontSize = (languageCode) => {
     fontSize,
     selectorTitle = '',
     footerLinkFont = '',
+    footerGap = '',
   } = settings[languageCode] || settings.default;
 
   document.querySelector('.header__title').style.fontSize = fontSize;
@@ -33,4 +39,5 @@ export const changeFontSize = (languageCode) => {
   document.querySelectorAll('.footer__link').forEach((element) => {
     element.style.fontSize = footerLinkFont;
   });
+  document.querySelector('.footer').style.gap = footerGap;
 };
