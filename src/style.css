@@ -303,6 +303,10 @@ body {
     margin-bottom: calc(40px * var(--magnification-factor));
   }
 
+  .cross__icon {
+    margin-top: calc(35px * var(--magnification-factor));
+  }
+
   .card {
     width: calc(104.4px * var(--magnification-factor));
     height: calc(138.6px * var(--magnification-factor));
