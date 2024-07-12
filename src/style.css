@@ -30,16 +30,16 @@ body {
 }
 
 .banner[data-model='default'] {
-  background-image: url(./assets/images/bg/bg.png);
+  background-image: url(./assets/images/bg/bg.jpg);
 }
 
 .banner[data-model='se'] {
-  background-image: url(./assets/images/bg/bgFor8.png);
+  background-image: url(./assets/images/bg/bgFor8.jpg);
   background-position: 50% 25%;
 }
 
 .banner[data-model='iphone8Plus'] {
-  background-image: url(./assets/images/bg/bgFor8.png);
+  background-image: url(./assets/images/bg/bgFor8.jpg);
   background-position: 50% 25%;
 }
 
